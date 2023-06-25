@@ -1,0 +1,35 @@
+{% extends "principal.html" %}
+{% block contentido %}
+
+  <h2>Lista de Automoviles registrados</h2>
+  <table id="tabla">
+    <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Numero de puertas</th>
+      <th>Numero de asientos</th>
+      <th>Trasmision</th>
+      <th>Color</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for auto in listado_automoviles  %}
+      <tr>
+        <td>{{auto.marca}}</td>
+        <td>{{auto.modelo}}</td>
+        <td>{{auto.numero_puertas}}</td>
+        <td>{{auto.numero_asientos}}</td>
+        <td>{{auto.trasmision}}</td>
+        <td>{{auto.color}}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
+  </tbody>
+    <script type="text/javascript">
+      $(document).ready( function () {
+          $('#tabla').DataTable();
+        });
+    </script>
+{% endblock %}
